@@ -1,6 +1,6 @@
 @extends('user.user')
 
-@section('title', 'Crime Reporting System')
+@section('title', config('app.name', 'Laravel'))
 
 @section('content')
 <div class="container-fluid">
@@ -19,7 +19,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Reported Crimes</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count(App\Models\Crime::where('created_by', Auth::user()->id)->get()) }}</div>
+                            {{-- <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count(App\Models\Crime::where('created_by', Auth::user()->id)->get()) }}</div> --}}
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-list fa-2x text-gray-300"></i>
@@ -36,7 +36,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Crimes Under Investigation</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count(App\Models\Crime::where('created_by', Auth::user()->id)->where('status', 'In Progress')->get()) }}</div>
+                            {{-- <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count(App\Models\Crime::where('created_by', Auth::user()->id)->where('status', 'In Progress')->get()) }}</div> --}}
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-list fa-2x text-gray-300"></i>
@@ -53,7 +53,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                 Completed Crimes</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count(App\Models\Crime::where('created_by', Auth::user()->id)->where('status', 'Completed')->get()) }}</div>
+                            {{-- <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count(App\Models\Crime::where('created_by', Auth::user()->id)->where('status', 'Completed')->get()) }}</div> --}}
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-list fa-2x text-gray-300"></i>

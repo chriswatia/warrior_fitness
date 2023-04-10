@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Crime Reporting System')
+@section('title', config('app.name', 'Laravel') )
 
 @section('content')
 <div class="container-fluid">
@@ -21,7 +21,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Reported Crimes</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count(App\Models\Crime::all()) }}</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -38,7 +38,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Crimes Under Investigation</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count(App\Models\Crime::where('status', 'In Progress')->get()) }}</div>
+                            {{-- <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count(App\Models\Crime::where('status', 'In Progress')->get()) }}</div> --}}
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-list fa-2x text-gray-300"></i>
@@ -57,7 +57,7 @@
                             </div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ count(App\Models\Crime::where('status', 'Completed')->get()) }}</div>
+                                    {{-- <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ count(App\Models\Crime::where('status', 'Completed')->get()) }}</div> --}}
                                 </div>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                 Unassigned Crimes</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count(App\Models\Crime::leftJoin('crime_assignment as ca', 'crimes.id', 'ca.crime_id')->whereNull('crime_id')->get()) }}</div>
+                            {{-- <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count(App\Models\Crime::leftJoin('crime_assignment as ca', 'crimes.id', 'ca.crime_id')->whereNull('crime_id')->get()) }}</div> --}}
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-list fa-2x text-gray-300"></i>
