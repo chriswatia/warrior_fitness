@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
@@ -60,8 +60,8 @@
             <span>Police Officers</span></a>
     </li>
     <!-- Divider -->
-    @if (Auth::user()->role_id == 1)   
-    
+    @if (Auth::user()->role_id == 1)
+
     <hr class="sidebar-divider">
     <div class="sidebar-heading">
         Configurations
@@ -94,7 +94,7 @@
             <span>Roles</span></a>
     </li>
     @endif
-    @if (Auth::user()->role_id == 3)   
+    @if (Auth::user()->role_id == 3)
     <!-- Heading -->
     <div class="sidebar-heading">
         Account
