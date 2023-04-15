@@ -28,7 +28,9 @@ class User extends Authenticatable
         'weight',
         'height',
         'target',
-        'address'
+        'address',
+        'date_of_birth',
+        'points'
     ];
 
     /**

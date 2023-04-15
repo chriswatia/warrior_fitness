@@ -21,6 +21,14 @@ Route::middleware(['auth'])->group(function (){
     //Update profile
     Route::get('profile/{id}', [App\Http\Controllers\UserController::class, 'editProfile']);
     Route::put('profile/{id}', [App\Http\Controllers\UserController::class, 'updateProfile']);
+
+    //ACTIVITY ROUTES
+    Route::get('activity', [App\Http\Controllers\ActivityController::class, 'index']);
+    Route::get('add-activity', [App\Http\Controllers\ActivityController::class, 'create']);
+    Route::post('add-activity', [App\Http\Controllers\ActivityController::class, 'store']);
+    Route::get('edit-activity/{id}', [App\Http\Controllers\ActivityController::class, 'edit']);
+    Route::put('edit-activity/{id}', [App\Http\Controllers\ActivityController::class, 'update']);
+    Route::get('delete-activity/{id}', [App\Http\Controllers\ActivityController::class, 'destroy']);
 });
 
 Route::prefix('admin')->middleware(['auth', 'IsAdmin'])->group(function(){

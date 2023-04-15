@@ -44,7 +44,7 @@ class UserController extends Controller
         else{
             return redirect('/admin')->with('message', "User updated successfully");
         }
-        
+
     }
 
     public function updateProfile(Request $request, $id)
@@ -56,6 +56,7 @@ class UserController extends Controller
 
         return redirect('/')->with('message', "User updated successfully");
     }
+
     public function destroy($id)
     {
         $user = User::findOrFail($id);
