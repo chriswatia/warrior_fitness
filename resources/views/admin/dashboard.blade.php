@@ -12,19 +12,17 @@
 
     <!-- Content Row -->
     <div class="row">
-
-        <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Reported Crimes</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                Steps</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">500</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                            <i class="fas fa-list fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -37,29 +35,8 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Crimes Under Investigation</div>
-                            {{-- <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count(App\Models\Crime::where('status', 'In Progress')->get()) }}</div> --}}
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-list fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Completed Crimes
-                            </div>
-                            <div class="row no-gutters align-items-center">
-                                <div class="col-auto">
-                                    {{-- <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ count(App\Models\Crime::where('status', 'Completed')->get()) }}</div> --}}
-                                </div>
-                            </div>
+                                Your Daily goals</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">10000</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-list fa-2x text-gray-300"></i>
@@ -75,8 +52,8 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                Unassigned Crimes</div>
-                            {{-- <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count(App\Models\Crime::leftJoin('crime_assignment as ca', 'crimes.id', 'ca.crime_id')->whereNull('crime_id')->get()) }}</div> --}}
+                                Your weekly target</div>
+                            {{-- <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count(App\Models\Crime::where('created_by', Auth::user()->id)->where('status', 'Completed')->get()) }}</div> --}}
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-list fa-2x text-gray-300"></i>

@@ -23,12 +23,13 @@
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
-                        <label for="">Name</label>
-                        <input type="text" name="firstname" value="{{ $user->firstname }}" id="" class="form-control" required>
+                        <label for="">Profile Image</label>
+                        <input type="file" name="profile_image" accept="image/*" class="form-control form-control-lg" style="width: 300px;">
+                        <small class="form-text text-muted">Image must be less than 2MB in size.</small>
                     </div>
                     <div class="mb-3">
                         <label for="">Name</label>
-                        <input type="text" name="lastname" value="{{ $user->lastname }}" id="" class="form-control" required>
+                        <input type="text" name="name" value="{{ $user->name }}" id="" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="">Email</label>
@@ -40,24 +41,9 @@
                     </div>
                     <div class="mb-3">
                         <label for="">Gender</label>
-                        <select class="form-select form-select-sm" aria-label=".form-select-lg example" required="required" name="gender">                                    
-                        {{-- <option>Choose Gender</option> --}}
+                        <select class="form-select form-select-sm" aria-label=".form-select-lg example" required="required" name="gender">
                         <option value="Male" @if (old($user->gender) == "Male") {{ "selected" }} @endif>Male</option>
                         <option value="Female" @if (old($user->gender) == "Female") {{ "selected" }} @endif>Female</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="">Address</label>
-                        <textarea name="address" class="form-control">{{ $user->address }}</textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="">Role</label>
-                        <select class="form-select form-select-sm" aria-label=".form-select-lg example" disabled name="role_id">
-                            <option selected></option>
-                            @foreach ($roles as $role)
-                            <option {{ old('role_id', $user->role_id) ==  $role->id ? 'selected' : ''}} value="{{ $role->id }}">{{ $role->name }}</option>
-                            @endforeach
-                            
                         </select>
                     </div>
                     <div class="row">

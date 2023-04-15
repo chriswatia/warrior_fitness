@@ -25,20 +25,15 @@
         Actions
     </div>
     <li class="nav-item">
-        <a class="nav-link" href="/add-crime">
-            <i class="fas fa-fw fa-list"></i>
-            <span>Report Crime</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="/crimes">
-            <i class="fas fa-fw fa-list"></i>
-            <span>Reported Crimes</span></a>
-    </li>
-    {{-- <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-list"></i>
-            <span>Assigned Crimes</span></a>
-    </li> --}}
+            <span>Browse</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-heartbeat"></i>
+            <span>Activity</span></a>
+    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
