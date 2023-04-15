@@ -4,12 +4,15 @@ Chart.defaults.global.defaultFontColor = '#858796';
 
 // Pie Chart Example
 var ctx = document.getElementById("myPieChart");
+var totalSteps = document.getElementById("totalSteps").value;
+var totalPoints = document.getElementById("totalPoints").value;
+var totalEnergy = document.getElementById("totalEnergy").value;
 var myPieChart = new Chart(ctx, {
   type: 'doughnut',
   data: {
-    labels: ["Direct", "Referral", "Social"],
+    labels: ["Steps", "Heart Points", "Energy"],
     datasets: [{
-      data: [55, 30, 15],
+      data: [totalSteps, totalPoints, totalEnergy],
       backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
       hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",

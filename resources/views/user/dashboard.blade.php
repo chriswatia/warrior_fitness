@@ -67,7 +67,7 @@
                                                 $weekEnd = Carbon::now()->endOfWeek();
 
                                                 $totalWeekPoints = App\Models\Activity::where('created_by', Auth::user()->id)
-                                                    ->whereBetween('created_at', [$weekStart, $weekEnd])
+                                                    ->whereBetween('activity_date', [$weekStart, $weekEnd])
                                                     ->sum('points');
                                                 $totalPoints = App\Models\User::where('id', Auth::user()->id)->first()->points * 7;
 
@@ -105,7 +105,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                    Heart Points</div>
+                                    Heart Points
+                                </div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">
                                     {{ App\Models\User::where('id', Auth::user()->id)->first()->points }}
                                 </div>
@@ -117,6 +118,8 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
 
         <!-- Content Row -->
@@ -135,17 +138,13 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                 aria-labelledby="dropdownMenuLink">
-                                <div class="dropdown-header">Dropdown Header:</div>
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
                             </div>
                         </div>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
                         <div class="chart-area">
+                            <input type="hidden" id="activities" value="{{ $activities }}">
                             <canvas id="myAreaChart"></canvas>
                         </div>
                     </div>
@@ -165,17 +164,15 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                 aria-labelledby="dropdownMenuLink">
-                                <div class="dropdown-header">Dropdown Header:</div>
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
                             </div>
                         </div>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
                         <div class="chart-pie pt-4 pb-2">
+                            <input type="hidden" id="totalSteps" value="{{ $totalSteps }}">
+                            <input type="hidden" id="totalPoints" value="{{ $totalPoints }}">
+                            <input type="hidden" id="totalEnergy" value="{{ $totalEnergy }}">
                             <canvas id="myPieChart"></canvas>
                         </div>
                         <div class="mt-4 text-center small">
@@ -183,10 +180,10 @@
                                 <i class="fas fa-circle text-primary"></i> Steps
                             </span>
                             <span class="mr-2">
-                                <i class="fas fa-circle text-success"></i> Points
+                                <i class="fas fa-circle text-success"></i> Heart Points
                             </span>
                             <span class="mr-2">
-                                <i class="fas fa-circle text-info"></i> Energy
+                                <i class="fas fa-circle text-info"></i> Calories
                             </span>
                         </div>
                     </div>

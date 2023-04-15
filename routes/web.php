@@ -17,6 +17,7 @@ Auth::routes();
 Route::middleware(['auth'])->group(function (){
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/', [App\Http\Controllers\UserDashboardController::class, 'index']);
+    Route::get('browse', [App\Http\Controllers\UserDashboardController::class, 'browse']);
 
     //Update profile
     Route::get('profile/{id}', [App\Http\Controllers\UserController::class, 'editProfile']);
